@@ -18,6 +18,10 @@ export default async function handler(req, res) {
     `?q=${encodeURIComponent(cityQuery)},KR` +
     `&units=metric&lang=kr&appid=${apiKey}`;
 
++ // ◀ 디버깅용 로그: 키와 URL 찍어보기
++ console.log('▶ API 키:', apiKey);
++ console.log('▶ 호출 URL:', url);
+  
   try {
     // 5) 외부 API 호출
     const apiRes = await fetch(url);
